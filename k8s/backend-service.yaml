@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: mern-backend
+  name: mern-backend
+spec:
+  ports:
+  - port: 3000
+    protocol: TCP
+    targetPort: 3000
+  selector:
+    app: mern-backend
+    tier: backend
+  sessionAffinity: None
+  type: LoadBalancer

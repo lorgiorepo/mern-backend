@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: mern-backend
+  name: mern-backend
+spec:
+  replicas: 2
+  strategy:
+    type: RollingUpdate
+  selector:
+    matchLabels:
+      app: mern-backend
+  template:
+    metadata:
+      labels:
+        app: mern-backend
+        tier: backend
+    spec:
+      containers:
+      - env:
+        - name: LOG_LEVEL
+          value: info
+        - name: MONGODB_URI
+          valueFrom:
+            secretKeyRef:
+              key: mongodburi
+              name: mern-backend
+        image: gcr.io/ml-api-demos-288521/mern-backend:1.0.1
+        name: mern-backend
+        ports:
+        - containerPort: 3000
+          protocol: TCP

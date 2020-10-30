@@ -1,0 +1,26 @@
+{
+  "name": "mern-backend",
+  "version": "1.0.0",
+  "description": "MERN Backend Stack fro item catalog",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lorgiorepo/mern-backend.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lorgiorepo/mern-backend/issues"
+  },
+  "homepage": "https://github.com/lorgiorepo/mern-backend#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.10.11"
+  }
+}
